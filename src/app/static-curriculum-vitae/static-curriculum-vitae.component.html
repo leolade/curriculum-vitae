@@ -1,0 +1,121 @@
+<div class="cv-container" fxFlex="900px" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+  <mat-card fxFlex="100%" fxLayout="column">
+    <mat-card-header>
+      <!--        @Todo Ajouter une photo-->
+      <i class="material-icons large" mat-card-avatar>person</i>
+      <mat-card-title>{{personne.prenom}} {{personne.nom}}</mat-card-title>
+      <mat-card-subtitle>{{personne.posteRecherche}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <div fxLayoutAlign="start center" fxLayoutGap="10px">
+        <i class="material-icons">calendar_today</i>
+        <span>{{personne.dateNaissance | date:'longDate':undefined:'fr-FR'}}</span>
+      </div>
+      <div fxLayoutAlign="start center" fxLayoutGap="10px">
+        <i class="material-icons">contact_phone</i>
+        <a *ngIf="!printMode" href="tel:+3369-943-5272"> {{personne.numeroTelephone}}</a>
+        <span *ngIf="printMode"> {{personne.numeroTelephone}}</span>
+      </div>
+      <div fxLayoutAlign="start center" fxLayoutGap="10px">
+        <i class="material-icons">contact_mail</i>
+        <a *ngIf="!printMode" href="mailto:nullepart@mozilla.org">{{personne.email}}</a>
+        <span *ngIf="printMode">{{personne.email}}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="scolarite-card" fxFlex="100%" fxLayout="column">
+    <mat-card-header>
+      <i class="material-icons" mat-card-avatar>school</i>
+      <mat-card-title>Scolarité et formations</mat-card-title>
+    </mat-card-header>
+    <mat-card-content fxLayout="column" fxLayoutGap="20px">
+      <div *ngFor="let formation of personne?.formations" fxLayout="column">
+        <div fxLayout="row" fxLayout="space-between center">
+          <p class="main-info">
+            {{formation.nomFormation}}
+          </p>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap="10px">
+          <div>
+            <ng-container *ngIf="formation?.dateDebut">{{formation?.dateDebut}}</ng-container>
+            <ng-container *ngIf="formation?.dateFin"> - {{formation?.dateFin}}</ng-container>
+            ,
+          </div>
+          <div>
+            <ng-container *ngIf="formation?.nomEtablissement"> {{formation.nomEtablissement}},</ng-container>
+
+          </div>
+          <div>
+            <ng-container *ngIf="formation?.villeEtablissement">{{formation?.villeEtablissement}}</ng-container>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <div fxFlex="100%" fxLayout="row" fxLayoutGap="25px">
+    <mat-card class="competences-card" fxFlex="250px" fxLayout="column">
+      <mat-card-header>
+        <i class="material-icons" mat-card-avatar>keyboard</i>
+        <mat-card-title>Compétences</mat-card-title>
+      </mat-card-header>
+      <mat-card-content fxLayout="column" fxLayoutGap="10px">
+        <div fxLayout="column" *ngFor="let competence of personne?.competences">
+          <h2>{{competence.nom}}</h2>
+          <ul fxLayoutGap="5px">
+            <li *ngFor="let sousCompetence of competence?.sousCompetences, let i = index">
+              <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                <span>{{sousCompetence.nom}}</span>
+                <img *ngIf="sousCompetence.image" [height]="sousCompetence.image.height*2"
+                     [src]="'./assets/icons/' + sousCompetence.image.name" [width]="sousCompetence.image.width*2">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card [fxFlex]="'1 1 auto'" class="experiences-card" fxLayout="column">
+      <mat-card-header>
+        <i class="material-icons" mat-card-avatar>work</i>
+        <mat-card-title>Expériences</mat-card-title>
+      </mat-card-header>
+      <mat-card-content fxLayout="column" fxLayoutGap="20px">
+        <div *ngFor="let experience of personne?.experiences" fxLayout="column">
+          <div fxLayout="row" fxLayout="space-between center">
+            <p class="main-info">
+              {{experience.nomPoste}}
+            </p>
+          </div>
+          <div fxLayout="column" fxLayoutGap="10px">
+            <div>
+              <ng-container *ngIf="experience?.dateDebut">{{experience?.dateDebut}}</ng-container>
+              <ng-container *ngIf="experience?.dateFin"> - {{experience?.dateFin}}</ng-container>
+
+            </div>
+            <div *ngIf="experience?.missionsHTML">
+              <p [innerHTML]="experience?.missionsHTML"></p>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <mat-card fxFlex="100%" fxLayout="column">
+    <mat-card-header>
+      <i class="material-icons" mat-card-avatar>sports_soccer</i>
+      <mat-card-title>Centres d'intérêts</mat-card-title>
+    </mat-card-header>
+    <mat-card-content fxLayout="row wrap" fxLayoutGap="10px">
+      <div *ngFor="let centreInteret of personne?.centresInterets; let i = index" fxLayout="row">
+          <span>
+            {{i === 0 ? centreInteret : centreInteret.toLocaleLowerCase()}}
+          </span>
+        <span *ngIf="i !== personne?.centresInterets - 1">
+            ,
+          </span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
