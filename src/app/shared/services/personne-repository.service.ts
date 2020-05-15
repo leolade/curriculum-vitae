@@ -16,7 +16,7 @@ export class PersonneRepositoryService {
       new Experience(
         'Adrea mutuelle',
         'Developpeur',
-        [`Stage consistant à interfacer les logiciels de gestions externe à l'écosysteme local de la mutelle.`,
+        [`Stage consistant à interfacer les logiciels de gestions externes à l'écosystème local de la mutuelle.`,
           `Pour cela, j'ai mis en place des API pouvant être consommés par les logiciels externes afin qu'Adrea puisse mieux piloter son activité.`
         ],
         'Juin 2016',
@@ -26,18 +26,18 @@ export class PersonneRepositoryService {
         'Fiducial Informatique',
         'Technicien support client',
         [`Support client de niveau 1 et 2.`,
-          `Après une phase de montée en compétence sur le logiciel à destination des infirmierès et infirmier libéraux, je suis intervenu en tant que référent sur les problèmatiques en base de données, sur l'application mobile, ou encore sur les clients grands comptes`
+          `Après une phase de montée en compétence sur le logiciel à destination des infirmières et infirmier libéraux, je suis intervenu en tant que référent sur les problématiques en base de données, sur l'application mobile, ou encore sur les clients grands comptes.`
         ],
         'Janvier 2017',
         'Avril 2018'
       ),
       new Experience(
         'Fiducial Informatique',
-        'Developpeur puis Scrum master',
-        [`Développement d'une application de rédactions d'actes notariés dans les technologies Angular, AngularJS et Java.`,
-          `Durant cette période, et en parralèle d'évolution fonctionnelle j'ai notamment été un acteur majoritaire de la réduction de la dette technique de l'application.`,
-          `En effet, j'ai réaliser la quasi totalité de la migration de l'application de technologies AngularJS / Java / ActionScript vers les technologies Angular 6 (puis Angular 7 et 8) / Java.`,
-          `De part cette expériences, je suis aujourd'hui le référent de l'équipe sur les technologies Front-end`,
+        'Développeur puis Scrum master',
+        [`Développement d'une application de rédaction d'actes notariés dans les technologies Angular, AngularJS et Java.`,
+          `Durant cette période, et en parallèle d'évolution fonctionnelle, j'ai notamment été un acteur majoritaire de la réduction de la dette technique de l'application.`,
+          `En effet, j'ai réalisé la quasi-totalité de la migration de l'application des technologies AngularJS / Java / Action Script vers les technologies Angular 6 (puis Angular 7 et 8) / Java.`,
+          `De par cette expérience, je suis aujourd'hui le référent de l'équipe sur les technologies Front-end`,
         ],
         'Avril 2018',
         `Aujourd'hui`
@@ -74,11 +74,11 @@ export class PersonneRepositoryService {
         null,
         null,
         [
-          new Competence('Méthode scrum', null),
-          new Competence('Git / Github', null),
-          new Competence('Intellij IDEA / Webstorm', null),
-          new Competence('Jenkins', null),
-          new Competence('SVN', null)
+          new Competence('Méthode scrum', null, new ImageInfo('ic-csm.png', 9, 9)),
+          new Competence('Git / Github', null, new ImageInfo('ic-git.png', 9, 9)),
+          new Competence('Intellij IDEA', null, new ImageInfo('ic-intellij.png', 9, 9)),
+          new Competence('Jenkins', null, new ImageInfo('ic-jenkins.png', 9, 6)),
+          new Competence('SVN', null, new ImageInfo('ic-svn.png', 9, 9))
         ]
       )
     ],
