@@ -11,7 +11,8 @@
         <div fxLayoutAlign="start center" fxLayoutGap="10px">
           <i class="material-icons">house</i>
           <span>
-        14 rue du docteur Horand, 69009 LYON 9</span>
+            {{personne.adresse}}
+          </span>
         </div>
         <div fxLayoutAlign="start center" fxLayoutGap="10px">
           <a *ngIf="!printMode" href="tel:+3369-943-5272"> {{personne.numeroTelephone}}</a>

@@ -9,6 +9,7 @@ export class PersonneRepositoryService {
     'Ladevie',
     'Léo',
     new Date('1995-03-08'),
+    '14 rue du docteur Horand, 69009 Lyon 9',
     '06.99.43.52.72',
     'lad.leo@hotmail.fr',
     'Developpeur',

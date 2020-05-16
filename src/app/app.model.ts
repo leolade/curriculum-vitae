@@ -134,6 +134,7 @@ export class Personne {
     private _nom: string,
     private _prenom: string,
     private _dateNaissance: Date,
+    private _adresse: string,
     private _numeroTelephone: string,
     private _email: string,
     private _posteRecherche: string,
@@ -144,6 +145,10 @@ export class Personne {
   ) {
   }
 
+
+  get adresse(): string {
+    return this._adresse;
+  }
 
   get centresInterets(): string[] {
     return this._centresInterets;
