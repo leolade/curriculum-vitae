@@ -22,6 +22,21 @@
           "destination": "/index.html"
         }
       ]
+    },
+    {
+      "target": "curriculum-vitae",
+      "public": "dist/curriculum-vitae",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }
