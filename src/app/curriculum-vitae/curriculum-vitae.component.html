@@ -1,5 +1,5 @@
-<div class="cv-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-  <mat-card fxLayout="column">
+<div [ngClass]="{'static' : staticMode}" class="cv-container" fxLayout="column" fxLayoutGap="20px">
+  <mat-card>
     <mat-card-header>
       <!--        @Todo Ajouter une photo-->
       <i class="material-icons large" mat-card-avatar>account_circle</i>
@@ -15,8 +15,7 @@
           </span>
         </div>
         <div fxLayoutAlign="start center" fxLayoutGap="10px">
-          <a *ngIf="!printMode" href="tel:+3369-943-5272"> {{personne.numeroTelephone}}</a>
-          <span *ngIf="printMode"> {{personne.numeroTelephone}}</span>
+          <a href="tel:+3369-943-5272"> {{personne.numeroTelephone}}</a>
           <i class="material-icons">contact_phone</i>
         </div>
       </div>
@@ -26,14 +25,13 @@
           <span>{{personne.dateNaissance | date:'longDate':undefined:'fr-FR'}}</span>
         </div>
         <div fxLayoutAlign="start center" fxLayoutGap="10px">
-          <a *ngIf="!printMode" href="mailto:nullepart@mozilla.org">{{personne.email}}</a>
-          <span *ngIf="printMode">{{personne.email}}</span>
+          <a href="mailto:nullepart@mozilla.org">{{personne.email}}</a>
           <i class="material-icons">contact_mail</i>
         </div>
       </div>
     </mat-card-content>
   </mat-card>
-  <mat-card class="scolarite-card" fxFlex="auto" fxLayout="column">
+  <mat-card class="scolarite-card">
     <mat-card-header>
       <i class="material-icons" mat-card-avatar>school</i>
       <mat-card-title>Scolarité et formations</mat-card-title>
@@ -62,13 +60,14 @@
       </div>
     </mat-card-content>
   </mat-card>
-  <div fxLayout="row" fxLayoutGap="25px">
-    <mat-card class="competences-card" fxFlex="250px">
+  <div fxLayout.gt-sm="row wrap" fxLayout.lt-md="column" fxLayoutGap="20px">
+    <mat-card class="competences-card" fxFlex.gt-sm="250px" fxFlex.lt-md="1 0 auto">
       <mat-card-header>
         <i class="material-icons" mat-card-avatar>keyboard</i>
         <mat-card-title>Compétences</mat-card-title>
       </mat-card-header>
-      <mat-card-content fxLayoutGap="10px">
+      <mat-card-content fxLayout.gt-sm="column" fxLayout.lt-md="row wrap" fxLayoutAlign.lt-md="space-between"
+                        fxLayoutGap="10px">
         <div *ngFor="let competence of personne?.competences" fxLayout="column">
           <h2>{{competence.nom}}</h2>
           <ul fxLayoutGap="5px">
@@ -82,7 +81,7 @@
         </div>
       </mat-card-content>
     </mat-card>
-    <mat-card class="experiences-card" fxFlex fxLayout="column">
+    <mat-card class="experiences-card" fxFlex.gt-sm fxFlex.lt-md="1 0 auto">
       <mat-card-header>
         <i class="material-icons" mat-card-avatar>work</i>
         <mat-card-title>Expériences</mat-card-title>
@@ -110,7 +109,7 @@
       </mat-card-content>
     </mat-card>
   </div>
-  <mat-card fxLayout="column">
+  <mat-card>
     <mat-card-header>
       <i class="material-icons" mat-card-avatar>sports_soccer</i>
       <mat-card-title>Centres d'intérêts</mat-card-title>

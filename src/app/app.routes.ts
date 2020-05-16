@@ -3,12 +3,12 @@ import {Routes} from '@angular/router';
 export class AppRoutes {
   static routes: Routes = [
     {
-      path: 'static',
-      loadChildren: () => import('./static-curriculum-vitae/static-curriculum-vitae.module').then(m => m.StaticCurriculumVitaeModule)
+      path: 'cv',
+      loadChildren: () => import('./curriculum-vitae/curriculum-vitae.module').then(m => m.CurriculumVitaeModule)
     },
     {
       path: '',
-      redirectTo: 'static',
+      redirectTo: 'cv',
       pathMatch: 'full',
     },
   ];

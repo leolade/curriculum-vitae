@@ -1,17 +1,11 @@
 :host {
 
-  margin-top: 20px;
-
   display: flex;
   font-size: 16px;
   width: 100%;
   flex-direction: column;
   place-content: center;
   align-items: center;
-
-  .cv-container {
-    width: 21cm;
-  }
 
   mat-card {
     box-shadow: 3px 3px #21465f, -3px -3px #418cbe;
@@ -30,9 +24,14 @@
   }
 
   .cv-container {
-    & > * {
-      width: 100%;
+
+    width: calc(100% - 30px);
+
+    &.static {
+      width: 21cm;
     }
+
+    margin: 15px;
 
     mat-card {
 

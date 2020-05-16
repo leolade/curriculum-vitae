@@ -1,25 +1,25 @@
-import {StaticCurriculumVitaeComponent} from './static-curriculum-vitae.component';
 import {Routes} from '@angular/router';
 import {PersonneResolverService} from '../shared/resolvers/personne-resolver.service';
 import {FalseResolverService} from '../shared/resolvers/false-resolver.service';
 import {TrueResolverService} from '../shared/resolvers/true-resolver.service';
+import {CurriculumVitaeComponent} from './curriculum-vitae.component';
 
-export class StaticCurriculumVitaeRoutes {
+export class CurriculumVitaeRoutes {
   static routes: Routes = [
     {
-      path: '',
-      component: StaticCurriculumVitaeComponent,
+      path: 'static',
+      component: CurriculumVitaeComponent,
       resolve: {
         personne: PersonneResolverService,
-        printMode: FalseResolverService,
+        staticMode: TrueResolverService,
       },
     },
     {
-      path: 'printable',
-      component: StaticCurriculumVitaeComponent,
+      path: '',
+      component: CurriculumVitaeComponent,
       resolve: {
         personne: PersonneResolverService,
-        printMode: TrueResolverService,
+        staticMode: FalseResolverService,
       },
     },
   ];

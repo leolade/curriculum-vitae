@@ -14,13 +14,13 @@ class UnsubscribeOnDestroy implements OnDestroy {
 }
 
 @Component({
-  selector: 'app-static-curriculum-vitae',
-  templateUrl: './static-curriculum-vitae.component.html',
-  styleUrls: ['./static-curriculum-vitae.component.scss']
+  selector: 'app-curriculum-vitae',
+  templateUrl: './curriculum-vitae.component.html',
+  styleUrls: ['./curriculum-vitae.component.scss']
 })
-export class StaticCurriculumVitaeComponent extends UnsubscribeOnDestroy  implements OnInit {
+export class CurriculumVitaeComponent extends UnsubscribeOnDestroy implements OnInit {
   personne: Personne;
-  printMode: boolean;
+  staticMode: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,7 +36,8 @@ export class StaticCurriculumVitaeComponent extends UnsubscribeOnDestroy  implem
       .subscribe(
         (data: Data) => {
           this.personne = data.personne;
-          this.printMode = data.printMode;
+          this.staticMode = data.staticMode;
+
         }
       );
   }
