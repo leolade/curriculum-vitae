@@ -14,24 +14,6 @@ export class PersonneRepositoryService {
     'Developpeur',
     [
       new Experience(
-        'Adrea mutuelle',
-        'Developpeur',
-        [`Stage consistant à interfacer les logiciels de gestions externes à l'écosystème local de la mutuelle.`,
-          `Pour cela, j'ai mis en place des API pouvant être consommés par les logiciels externes afin qu'Adrea puisse mieux piloter son activité.`
-        ],
-        'Juin 2016',
-        'Septembre 2016'
-      ),
-      new Experience(
-        'Fiducial Informatique',
-        'Technicien support client',
-        [`Support client de niveau 1 et 2.`,
-          `Après une phase de montée en compétence sur le logiciel à destination des infirmières et infirmier libéraux, je suis intervenu en tant que référent sur les problématiques en base de données, sur l'application mobile, ou encore sur les clients grands comptes.`
-        ],
-        'Janvier 2017',
-        'Avril 2018'
-      ),
-      new Experience(
         'Fiducial Informatique',
         'Développeur puis Scrum master',
         [`Développement d'une application de rédaction d'actes notariés dans les technologies Angular, AngularJS et Java.`,
@@ -39,8 +21,26 @@ export class PersonneRepositoryService {
           `En effet, j'ai réalisé la quasi-totalité de la migration de l'application des technologies AngularJS / Java / Action Script vers les technologies Angular 6 (puis Angular 7 et 8) / Java.`,
           `De par cette expérience, je suis aujourd'hui le référent de l'équipe sur les technologies Front-end`,
         ],
-        'Avril 2018',
-        `Aujourd'hui`
+        'avril 2018',
+        `aujourd'hui`
+      ),
+      new Experience(
+        'Fiducial Informatique',
+        'Technicien support client',
+        [`Support client de niveau 1 et 2.`,
+          `Après une phase de montée en compétence sur le logiciel à destination des infirmières et infirmier libéraux, je suis intervenu en tant que référent sur les problématiques en base de données, sur l'application mobile, ou encore sur les clients grands comptes.`
+        ],
+        'janvier 2017',
+        'avril 2018'
+      ),
+      new Experience(
+        'Adrea mutuelle',
+        'Developpeur',
+        [`Stage consistant à interfacer les logiciels de gestions externes à l'écosystème local de la mutuelle.`,
+          `Pour cela, j'ai mis en place des API pouvant être consommés par les logiciels externes afin qu'Adrea puisse mieux piloter son activité.`
+        ],
+        'juin 2016',
+        'septembre 2016'
       ),
     ],
     [
@@ -84,24 +84,24 @@ export class PersonneRepositoryService {
     ],
     [
       new Formation(
-        'IUT Université Clermont Auvergne',
-        'Clermont-ferrand, Aurillac',
-        `DUT Gestion des entreprises et des administrations (GEA)`,
-        'Septembre 2013',
-        'Septembre 2015',
+        'Scrum Alliance',
+        'Lyon',
+        `Certification scrum master`,
+        'mai 2019',
       ),
       new Formation(
         'IUT Université Lyon 1',
         'Villeurbanne',
         `DUT Informatique`,
-        'Septembre 2015',
-        'Septembre 2016',
+        'septembre 2015',
+        'septembre 2016',
       ),
       new Formation(
-        'Scrum Alliance',
-        'Lyon',
-        `Certification scrum master`,
-        'Mai 2019',
+        'IUT Université Clermont Auvergne',
+        'Clermont-ferrand, Aurillac',
+        `DUT Gestion des entreprises et des administrations (GEA)`,
+        'septembre 2013',
+        'septembre 2015',
       ),
     ],
     ['Football', 'Nouvelles technologies', 'Gastronomie', 'Accordéon']
