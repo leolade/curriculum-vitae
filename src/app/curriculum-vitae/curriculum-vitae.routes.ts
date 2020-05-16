@@ -3,12 +3,13 @@ import {PersonneResolverService} from '../shared/resolvers/personne-resolver.ser
 import {FalseResolverService} from '../shared/resolvers/false-resolver.service';
 import {TrueResolverService} from '../shared/resolvers/true-resolver.service';
 import {CurriculumVitaeComponent} from './curriculum-vitae.component';
+import {CurriculumVitaeStaticComponent} from './components/curriculum-vitae-static/curriculum-vitae-static.component';
 
 export class CurriculumVitaeRoutes {
   static routes: Routes = [
     {
       path: 'static',
-      component: CurriculumVitaeComponent,
+      component: CurriculumVitaeStaticComponent,
       resolve: {
         personne: PersonneResolverService,
         staticMode: TrueResolverService,

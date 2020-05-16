@@ -23,7 +23,7 @@ export class CurriculumVitaeComponent extends UnsubscribeOnDestroy implements On
   staticMode: boolean;
 
   constructor(
-    private route: ActivatedRoute,
+    protected route: ActivatedRoute,
   ) {
     super();
   }

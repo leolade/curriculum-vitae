@@ -69,6 +69,16 @@
         }
       }
 
+      @media print {
+        .competences-card {
+          margin-right: 20px;
+          flex: 1 1 250px;
+          box-sizing: border-box;
+          max-width: 250px;
+          min-width: 250px;
+        }
+      }
+
       li > img {
         margin-left: 5px;
       }
