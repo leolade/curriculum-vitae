@@ -1,13 +1,17 @@
 :host {
 
-  @media print {
-    margin-top: 20px;
-  }
+  margin-top: 20px;
 
+  display: flex;
   font-size: 16px;
   width: 100%;
+  flex-direction: column;
   place-content: center;
   align-items: center;
+
+  .cv-container {
+    width: 21cm;
+  }
 
   mat-card {
     box-shadow: 3px 3px #21465f, -3px -3px #418cbe;
@@ -64,6 +68,10 @@
           font-size: 18px;
           font-weight: 500;
         }
+      }
+
+      li > img {
+        margin-left: 5px;
       }
     }
   }
