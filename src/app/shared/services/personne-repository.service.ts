@@ -12,7 +12,7 @@ export class PersonneRepositoryService {
     '14 rue du docteur Horand, 69009 Lyon 9',
     '06.99.43.52.72',
     'lad.leo@hotmail.fr',
-    'Developpeur',
+    'Développeur',
     [
       new Experience(
         'Fiducial Informatique',
@@ -45,6 +45,18 @@ export class PersonneRepositoryService {
       ),
     ],
     [
+
+      new CategorieCompetence(
+        'Back-end',
+        null,
+        null,
+        [
+          new Competence('JAVA SE/EE', null, new ImageInfo('ic-java.png', 9, 5)),
+          new Competence('Maven', null, new ImageInfo('ic-maven.png', 4, 16)),
+          new Competence('Spring', null, new ImageInfo('ic-spring.png', 4, 13)),
+          new Competence('SQL', null),
+        ]
+      ),
       new CategorieCompetence(
         'Front-end',
         null,
@@ -57,17 +69,6 @@ export class PersonneRepositoryService {
           new Competence('Javascript', null, new ImageInfo('ic-javascript.png', 9, 9)),
           new Competence('HTML5', null, new ImageInfo('ic-html5.png', 9, 9)),
           new Competence('CSS3', null, new ImageInfo('ic-css3.png', 8, 4)),
-        ]
-      ),
-      new CategorieCompetence(
-        'Back-end',
-        null,
-        null,
-        [
-          new Competence('JAVA SE/EE', null, new ImageInfo('ic-java.png', 9, 5)),
-          new Competence('Maven', null, new ImageInfo('ic-maven.png', 4, 16)),
-          new Competence('Spring', null, new ImageInfo('ic-spring.png', 4, 13)),
-          new Competence('SQL', null),
         ]
       ),
       new CategorieCompetence(
