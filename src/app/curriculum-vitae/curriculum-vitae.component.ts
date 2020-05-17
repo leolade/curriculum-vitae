@@ -20,7 +20,6 @@ class UnsubscribeOnDestroy implements OnDestroy {
 })
 export class CurriculumVitaeComponent extends UnsubscribeOnDestroy implements OnInit {
   personne: Personne;
-  staticMode: boolean;
 
   constructor(
     protected route: ActivatedRoute,
@@ -36,10 +35,12 @@ export class CurriculumVitaeComponent extends UnsubscribeOnDestroy implements On
       .subscribe(
         (data: Data) => {
           this.personne = data.personne;
-          this.staticMode = data.staticMode;
 
         }
       );
   }
 
+  print(): void {
+    window.print();
+  }
 }

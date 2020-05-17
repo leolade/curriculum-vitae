@@ -7,6 +7,12 @@
   place-content: center;
   align-items: center;
 
+  @media print, screen and (max-width: 959px) {
+    .print-button {
+      display: none;
+    }
+  }
+
   mat-card {
     box-shadow: 3px 3px #21465f, -3px -3px #418cbe;
   }
@@ -27,13 +33,19 @@
 
     width: calc(100% - 30px);
 
-    &.static {
-      width: 21cm;
-    }
-
     margin: 15px;
 
     mat-card {
+
+      &.infos-principales-card {
+        ::ng-deep {
+          mat-card-header {
+            .mat-card-header-text {
+              display: none;
+            }
+          }
+        }
+      }
 
       mat-card-header {
         border-bottom: 1px solid #dedede;
@@ -66,16 +78,6 @@
         p.main-info {
           font-size: 18px;
           font-weight: 500;
-        }
-      }
-
-      @media print {
-        .competences-card {
-          margin-right: 20px;
-          flex: 1 1 250px;
-          box-sizing: border-box;
-          max-width: 250px;
-          min-width: 250px;
         }
       }
 

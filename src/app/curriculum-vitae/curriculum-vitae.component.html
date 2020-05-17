@@ -1,35 +1,46 @@
-<div [ngClass]="{'static' : staticMode}" class="cv-container" fxLayout="column" fxLayoutGap="20px">
-  <mat-card>
+<div class="cv-container" fxLayout="column" fxLayoutGap="20px">
+  <mat-card class="infos-principales-card">
     <mat-card-header>
       <!--        @Todo Ajouter une photo-->
-      <i class="material-icons large" mat-card-avatar>account_circle</i>
-      <mat-card-title>{{personne.prenom}} {{personne.nom}}</mat-card-title>
-      <mat-card-subtitle>{{personne.posteRecherche}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content fxLayout="column" fxLayoutGap="10px">
-      <div class="coordonnee-flexbox" fxLayout="row" fxLayoutAlign="space-between center"
-           fxLayoutGap="20px">
-        <div fxLayout="column">
-          <div fxLayoutAlign="start center" fxLayoutGap="10px">
-            <i class="material-icons">contact_phone</i>
-            <a href="tel:+3369-943-5272"> {{personne.numeroTelephone}}</a>
-          </div>
-          <div fxLayoutAlign="start center" fxLayoutGap="10px">
-            <i class="material-icons">contact_mail</i>
-            <a href="mailto:nullepart@mozilla.org">{{personne.email}}</a>
+      <div fxFlex fxLayoutAlign="space-between start">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+          <i class="material-icons large" fxFlexAlign="start" mat-card-avatar>account_circle</i>
+          <div>
+            <mat-card-title>{{personne.prenom}} {{personne.nom}}</mat-card-title>
+            <mat-card-subtitle>{{personne.posteRecherche}}</mat-card-subtitle>
           </div>
         </div>
-        <div fxLayout="column" fxLayoutAlign="start end">
-          <div fxLayoutAlign="start center" fxLayoutGap="10px">
-            <span>{{personne.dateNaissance | date:'longDate':undefined:'fr-FR'}}</span>
-            <i class="material-icons">calendar_today</i>
-          </div>
-          <div fxLayoutAlign="start center" fxLayoutGap="10px">
-            <span>
+        <button (click)="print()" class="print-button" color="primary" mat-icon-button mat-raised-button>
+          <mat-icon>printer</mat-icon>
+        </button>
+      </div>
+    </mat-card-header>
+    <mat-card-content
+      fxLayout="row" fxLayout.lt-sm="column"
+      fxLayoutAlign="space-between center" fxLayoutAlign.lt-sm="start start"
+      fxLayoutGap="20px" fxLayoutGap.lt-sm="0px">
+      <div fxLayout="column">
+        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+          <i class="material-icons">contact_phone</i>
+          <a href="tel:+3369-943-5272"> {{personne.numeroTelephone}}</a>
+        </div>
+        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+          <i class="material-icons">contact_mail</i>
+          <a href="mailto:nullepart@mozilla.org">{{personne.email}}</a>
+        </div>
+      </div>
+      <div fxLayout="column"
+           fxLayoutAlign="end end" fxLayoutAlign.lt-sm="start start">
+        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+          <i class="material-icons" fxFlexOrder="2" fxFlexOrder.lt-sm="1">house</i>
+          <span fxFlexOrder="1" fxFlexOrder.lt-sm="2">
             {{personne.adresse}}
-          </span>
-            <i class="material-icons">house</i>
-          </div>
+            </span>
+        </div>
+        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+          <i class="material-icons" fxFlexOrder="2" fxFlexOrder.lt-sm="1">calendar_today</i>
+          <span fxFlexOrder="1"
+                fxFlexOrder.lt-sm="2">{{personne.dateNaissance | date:'longDate':undefined:'fr-FR'}}</span>
         </div>
       </div>
     </mat-card-content>
@@ -63,13 +74,14 @@
       </div>
     </mat-card-content>
   </mat-card>
-  <div fxLayout="row wrap" fxLayoutGap="20px">
-    <mat-card class="competences-card" fxFlex="250px">
+  <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="20px">
+    <mat-card class="competences-card" fxFlex="250px" fxFlex.lt-md="1 1 auto">
       <mat-card-header>
         <i class="material-icons" mat-card-avatar>keyboard</i>
         <mat-card-title>Compétences</mat-card-title>
       </mat-card-header>
-      <mat-card-content fxLayout="column" fxLayoutGap="10px">
+      <mat-card-content fxLayout="column" fxLayout.lt-md="row wrap" fxLayoutAlign.lt-md="space-between"
+                        fxLayoutGap="10px">
         <div *ngFor="let competence of personne?.competences" fxLayout="column">
           <h2>{{competence.nom}}</h2>
           <ul fxLayoutGap="5px">
