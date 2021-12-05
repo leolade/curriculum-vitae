@@ -91,9 +91,9 @@ export class ImageInfo {
 
 export class Competence {
   constructor(
-   protected _nom: string,
-   protected _niveau: number,
-   protected _image: ImageInfo = null,
+    protected _nom: string,
+    protected _niveau: number,
+    protected _image: ImageInfo = null,
   ) {
 
   }

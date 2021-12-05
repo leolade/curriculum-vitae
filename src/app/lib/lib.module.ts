@@ -1,5 +1,5 @@
 import {ModuleWithProviders, NgModule, Type} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {FlexLayoutModule, FlexModule} from '@angular/flex-layout';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -68,10 +68,10 @@ const exportModules: Array<Type<any> | any[]> = [
   MatTableModule,
   MatSortModule,
   MatPaginatorModule
-]
+];
 
 const importsModule: Array<Type<any> | ModuleWithProviders<{}> | any[]> =
-  ([CommonModule] as Array<Type<any> | ModuleWithProviders<{}> | any[]>).concat(exportModules)
+  ([CommonModule] as Array<Type<any> | ModuleWithProviders<{}> | any[]>).concat(exportModules);
 
 
 @NgModule({
@@ -79,4 +79,5 @@ const importsModule: Array<Type<any> | ModuleWithProviders<{}> | any[]> =
   imports: importsModule,
   exports: exportModules,
 })
-export class LibModule { }
+export class LibModule {
+}

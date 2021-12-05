@@ -25,4 +25,5 @@ const services: Provider[] = [
   providers: services,
 
 })
-export class SharedModule { }
+export class SharedModule {
+}
