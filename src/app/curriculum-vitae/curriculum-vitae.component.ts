@@ -4,7 +4,10 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {Personne} from '../app.model';
 
-class UnsubscribeOnDestroy implements OnDestroy {
+@Component({
+  template: '',
+})
+class UnsubscribeOnDestroyComponent implements OnDestroy {
   componentDestroyed: Subject<boolean> = new Subject<boolean>();
 
   ngOnDestroy(): void {
@@ -18,7 +21,7 @@ class UnsubscribeOnDestroy implements OnDestroy {
   templateUrl: './curriculum-vitae.component.html',
   styleUrls: ['./curriculum-vitae.component.scss']
 })
-export class CurriculumVitaeComponent extends UnsubscribeOnDestroy implements OnInit {
+export class CurriculumVitaeComponent extends UnsubscribeOnDestroyComponent implements OnInit {
   personne: Personne;
 
   constructor(
