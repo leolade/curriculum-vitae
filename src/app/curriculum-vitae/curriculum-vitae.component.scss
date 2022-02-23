@@ -75,6 +75,10 @@
       }
 
       &.scolarite-card, &.experiences-card {
+        @media print {
+          margin-top: 10px;
+        }
+
         p.main-info {
           font-size: 18px;
           font-weight: 500;
