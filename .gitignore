@@ -45,6 +45,6 @@ testem.log
 .DS_Store
 Thumbs.db
 /.editorconfig
-/.firebaserc
 /curriculum-vitae.iml
-/.firebase/hosting.ZGlzdFxjdXJyaWN1bHVtLXZpdGFl.cache
+/package-lock.json
+/.angular/
