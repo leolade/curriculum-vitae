@@ -45,35 +45,6 @@
       </div>
     </mat-card-content>
   </mat-card>
-  <mat-card class="scolarite-card">
-    <mat-card-header>
-      <i class="material-icons" mat-card-avatar>school</i>
-      <mat-card-title>Scolarité et formations</mat-card-title>
-    </mat-card-header>
-    <mat-card-content fxLayout="column" fxLayoutGap="20px">
-      <div *ngFor="let formation of personne?.formations" fxLayout="column">
-        <div fxLayout="row">
-          <p class="main-info">
-            {{formation.nomFormation}}
-          </p>
-        </div>
-        <div fxLayout="row wrap" fxLayoutGap="10px">
-          <div class="italic">
-            <ng-container *ngIf="formation?.dateDebut">{{formation?.dateDebut}}</ng-container>
-            <ng-container *ngIf="formation?.dateFin"> à {{formation?.dateFin}}</ng-container>
-            ,
-          </div>
-          <div>
-            <ng-container *ngIf="formation?.nomEtablissement"> {{formation.nomEtablissement}},</ng-container>
-
-          </div>
-          <div>
-            <ng-container *ngIf="formation?.villeEtablissement">{{formation?.villeEtablissement}}</ng-container>
-          </div>
-        </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
   <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="20px">
     <mat-card class="competences-card" fxFlex="250px" fxFlex.lt-md="1 1 auto">
       <mat-card-header>
@@ -123,6 +94,35 @@
       </mat-card-content>
     </mat-card>
   </div>
+  <mat-card class="scolarite-card">
+    <mat-card-header>
+      <i class="material-icons" mat-card-avatar>school</i>
+      <mat-card-title>Scolarité et formations</mat-card-title>
+    </mat-card-header>
+    <mat-card-content fxLayout="column" fxLayoutGap="20px">
+      <div *ngFor="let formation of personne?.formations" fxLayout="column">
+        <div fxLayout="row">
+          <p class="main-info">
+            {{formation.nomFormation}}
+          </p>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap="10px">
+          <div class="italic">
+            <ng-container *ngIf="formation?.dateDebut">{{formation?.dateDebut}}</ng-container>
+            <ng-container *ngIf="formation?.dateFin"> à {{formation?.dateFin}}</ng-container>
+            ,
+          </div>
+          <div>
+            <ng-container *ngIf="formation?.nomEtablissement"> {{formation.nomEtablissement}},</ng-container>
+
+          </div>
+          <div>
+            <ng-container *ngIf="formation?.villeEtablissement">{{formation?.villeEtablissement}}</ng-container>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
   <mat-card>
     <mat-card-header>
       <i class="material-icons" mat-card-avatar>sports_soccer</i>
