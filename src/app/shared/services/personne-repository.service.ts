@@ -15,15 +15,25 @@ export class PersonneRepositoryService {
     'Développeur',
     [
       new Experience(
+        'Sopra Steria',
+        `Ingénieur d'études Java`,
+        [`Développement et maintenance d'une application de gestion de biens sociaux.`,
+          `Maintien en condition opérationnelle d'une application en Java 8 (JSF/ Struts 2) sur l'ensemble des modules de gestion financière du produit.`,
+          `J'ai également développé certaines fonctionnalités améliorant l'existant du produit.`,
+        ],
+        'Juin 2021',
+        `aujourd'hui`
+      ),
+      new Experience(
         'Fiducial Informatique',
         'Développeur puis Scrum master',
         [`Développement d'une application de rédaction d'actes notariés dans les technologies Angular, AngularJS et Java.`,
           `Durant cette période, et en parallèle d'évolution fonctionnelle, j'ai notamment été un acteur majoritaire de la réduction de la dette technique de l'application.`,
-          `En effet, j'ai réalisé la quasi-totalité de la migration de l'application des technologies AngularJS / Java / Action Script vers les technologies Angular 6 (puis Angular 7 et 8) / Java.`,
-          `De par cette expérience, je suis aujourd'hui le référent de l'équipe sur les technologies Front-end`,
+          `En effet, j'ai réalisé une grande partie de la migration de l'application des technologies AngularJS / Action Script vers la technologie Angular 6 (puis Angular 7 et 8).`,
+          `De par cette expérience, je suis devenu le référent de l'équipe sur les technologies Front-end`
         ],
         'avril 2018',
-        `aujourd'hui`
+        `Juin 2021`
       ),
       new Experience(
         'Fiducial Informatique',
