@@ -38,8 +38,8 @@ export class PersonneRepositoryService {
       new Experience(
         'Fiducial Informatique',
         'Technicien support client',
-        [`Support client de niveau 1 et 2.`,
-          `Après une phase de montée en compétence sur le logiciel à destination des infirmières et infirmier libéraux, je suis intervenu en tant que référent sur les problématiques en base de données, sur l'application mobile, ou encore sur les clients grands comptes.`
+        [`Support client de niveau 1 et 2 sur un logiciel infirmier.`,
+          `Je suis intervenu en tant que référent sur les problématiques en base de données, sur l'application mobile, ou encore sur les clients grands comptes.`
         ],
         'janvier 2017',
         'avril 2018'
@@ -47,8 +47,7 @@ export class PersonneRepositoryService {
       new Experience(
         'Adrea mutuelle',
         'Developpeur',
-        [`Stage consistant à interfacer les logiciels de gestions externes à l'écosystème local de la mutuelle.`,
-          `Pour cela, j'ai mis en place des API pouvant être consommés par les logiciels externes afin qu'Adrea puisse mieux piloter son activité.`
+        [`Stage consistant à interfacer les logiciels de gestions externes à l'écosystème local de la mutuelle via une API SOAP Java.`,
         ],
         'juin 2016',
         'septembre 2016'
