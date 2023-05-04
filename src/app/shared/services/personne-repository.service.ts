@@ -2,7 +2,9 @@ import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {CategorieCompetence, Competence, Experience, Formation, ImageInfo, Personne} from '../../app.model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class PersonneRepositoryService {
 
   private personne: Personne = new Personne(
@@ -14,6 +16,17 @@ export class PersonneRepositoryService {
     'lad.leo@hotmail.fr',
     'Développeur',
     [
+      new Experience(
+        'IKIGAÏ - En mission chez un éditeur de logiciel',
+        `Ingénieur d'études Angular/Java`,
+        [`Développement d'une application de rédaction d'actes notariés .`,
+          `Conception et veille technique en Angular de part un rôle de lead developer.`,
+          `Gestion d'une équipe Scrum de 6 développeurs.`,
+          `Formations et documentations de bonnes pratiques.`,
+        ],
+        'Juin 2021',
+        `aujourd'hui`
+      ),
       new Experience(
         'Sopra Steria',
         `Ingénieur d'études Java`,

@@ -1,9 +1,11 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {CommonModule, NgForOf} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {CurriculumVitaeRoutes} from './curriculum-vitae.routes';
-import {SharedModule} from '../shared/shared.module';
 import {CurriculumVitaeComponent} from './curriculum-vitae.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import {CurriculumVitaeComponent} from './curriculum-vitae.component';
   imports: [
     RouterModule.forChild(CurriculumVitaeRoutes.routes),
     CommonModule,
-    SharedModule
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule
   ],
 })
 export class CurriculumVitaeModule {

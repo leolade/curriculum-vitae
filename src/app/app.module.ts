@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {LibModule} from './lib/lib.module';
 import {AppRoutes} from './app.routes';
 import {RouterModule} from '@angular/router';
 import {registerLocaleData} from '@angular/common';
@@ -19,7 +18,6 @@ registerLocaleData(localeFr, 'fr-FR');
     RouterModule.forRoot(AppRoutes.routes),
     BrowserModule,
     BrowserAnimationsModule,
-    LibModule
   ],
   bootstrap: [AppComponent]
 })

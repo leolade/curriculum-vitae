@@ -4,7 +4,9 @@ import {Personne} from '../../app.model';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {PersonneRepositoryService} from '../services/personne-repository.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class PersonneResolverService implements Resolve<Personne> {
 
   constructor(

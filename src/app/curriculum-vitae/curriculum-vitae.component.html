@@ -1,61 +1,49 @@
-<div class="cv-container" fxLayout="column" fxLayoutGap="20px">
+<div class="cv-container">
   <mat-card class="infos-principales-card">
     <mat-card-header>
-      <!--        @Todo Ajouter une photo-->
-      <div fxFlex fxLayoutAlign="space-between start">
-        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
-          <i class="material-icons large" fxFlexAlign="start" mat-card-avatar>account_circle</i>
-          <div>
-            <mat-card-title>{{personne.prenom}} {{personne.nom}}</mat-card-title>
-            <mat-card-subtitle>{{personne.posteRecherche}}</mat-card-subtitle>
-          </div>
-        </div>
-        <button (click)="print()" class="print-button" color="primary" mat-icon-button mat-raised-button>
-          <mat-icon>printer</mat-icon>
-        </button>
-      </div>
+      <mat-icon mat-card-avatar>account_circle</mat-icon>
+      <mat-card-title>{{personne.prenom}} {{personne.nom}}</mat-card-title>
+      <mat-card-subtitle>{{personne.posteRecherche}}</mat-card-subtitle>
+      <button (click)="print()" class="print-button" color="primary" mat-icon-button>
+        <mat-icon>printer</mat-icon>
+      </button>
     </mat-card-header>
     <mat-card-content
-      fxLayout="row" fxLayout.lt-sm="column"
-      fxLayoutAlign="space-between center" fxLayoutAlign.lt-sm="start start"
-      fxLayoutGap="20px" fxLayoutGap.lt-sm="0px">
-      <div fxLayout="column">
-        <div fxLayoutAlign="start center" fxLayoutGap="10px">
-          <i class="material-icons">contact_phone</i>
+      class="">
+      <div class="">
+        <div class="">
+          <mat-icon>contact_phone</mat-icon>
           <a href="tel:+3369-943-5272"> {{personne.numeroTelephone}}</a>
         </div>
-        <div fxLayoutAlign="start center" fxLayoutGap="10px">
-          <i class="material-icons">contact_mail</i>
+        <div class="">
+          <mat-icon>contact_mail</mat-icon>
           <a href="mailto:lad.leo@hotmail.fr">{{personne.email}}</a>
         </div>
       </div>
-      <div fxLayout="column"
-           fxLayoutAlign="end end" fxLayoutAlign.lt-sm="start start">
-        <div fxLayoutAlign="start center" fxLayoutGap="10px">
-          <i class="material-icons" fxFlexOrder="2" fxFlexOrder.lt-sm="1">house</i>
-          <div fxFlexOrder="1" fxFlexOrder.lt-sm="2">
+      <div class="">
+        <div class="">
+          <mat-icon class="">house</mat-icon>
+          <div class="">
             {{personne.adresse}}
           </div>
         </div>
-        <div fxLayoutAlign="start center" fxLayoutGap="10px">
-          <i class="material-icons" fxFlexOrder="2" fxFlexOrder.lt-sm="1">calendar_today</i>
-          <span fxFlexOrder="1"
-                fxFlexOrder.lt-sm="2">{{personne.dateNaissance | date:'longDate':undefined:'fr-FR'}}</span>
+        <div class="">
+          <mat-icon class="">calendar_today</mat-icon>
+          <span class="">{{personne.dateNaissance | date:'longDate':undefined:'fr-FR'}}</span>
         </div>
       </div>
     </mat-card-content>
   </mat-card>
-  <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="20px">
-    <mat-card class="competences-card" fxFlex="250px" fxFlex.lt-md="1 1 auto">
+  <div class="">
+    <mat-card class="">
       <mat-card-header>
-        <i class="material-icons" mat-card-avatar>keyboard</i>
+        <mat-icon mat-card-avatar>keyboard</mat-icon>
         <mat-card-title>Compétences</mat-card-title>
       </mat-card-header>
-      <mat-card-content fxLayout="column" fxLayout.lt-md="row wrap" fxLayoutAlign.lt-md="space-between"
-                        fxLayoutGap="10px">
-        <div *ngFor="let competence of personne?.competences" fxLayout="column">
+      <mat-card-content class="">
+        <div *ngFor="let competence of personne?.competences" class="">
           <h2>{{competence.nom}}</h2>
-          <ul fxLayoutGap="5px">
+          <ul class="">
             <li *ngFor="let sousCompetence of competence?.sousCompetences, let i = index">
               <span>{{sousCompetence.nom}}</span>
               <img *ngIf="sousCompetence.image" [height]="sousCompetence.image.height*2"
@@ -66,19 +54,19 @@
         </div>
       </mat-card-content>
     </mat-card>
-    <mat-card class="experiences-card" fxFlex>
+    <mat-card class="experiences-card">
       <mat-card-header>
-        <i class="material-icons" mat-card-avatar>work</i>
+        <mat-icon mat-card-avatar>work</mat-icon>
         <mat-card-title>Expériences</mat-card-title>
       </mat-card-header>
-      <mat-card-content fxLayout="column" fxLayoutGap="20px">
-        <div *ngFor="let experience of personne?.experiences" fxLayout="column">
-          <div fxLayout="row">
+      <mat-card-content class="">
+        <div *ngFor="let experience of personne?.experiences" class="">
+          <div class="">
             <p class="main-info">
               {{experience.nomPoste}}
             </p>
           </div>
-          <div fxLayout="column" fxLayoutGap="10px">
+          <div class="">
             <div>
               {{experience.nomEntreprise}}
               <span class="italic">
@@ -96,17 +84,17 @@
   </div>
   <mat-card class="scolarite-card">
     <mat-card-header>
-      <i class="material-icons" mat-card-avatar>school</i>
+      <mat-icon mat-card-avatar>school</mat-icon>
       <mat-card-title>Scolarité et formations</mat-card-title>
     </mat-card-header>
-    <mat-card-content fxLayout="column" fxLayoutGap="20px">
-      <div *ngFor="let formation of personne?.formations" fxLayout="column">
-        <div fxLayout="row">
+    <mat-card-content class="">
+      <div *ngFor="let formation of personne?.formations" class="">
+        <div class="">
           <p class="main-info">
             {{formation.nomFormation}}
           </p>
         </div>
-        <div fxLayout="row wrap" fxLayoutGap="10px">
+        <div class="">
           <div class="italic">
             <ng-container *ngIf="formation?.dateDebut">{{formation?.dateDebut}}</ng-container>
             <ng-container *ngIf="formation?.dateFin"> à {{formation?.dateFin}}</ng-container>
@@ -125,11 +113,11 @@
   </mat-card>
   <mat-card>
     <mat-card-header>
-      <i class="material-icons" mat-card-avatar>sports_soccer</i>
+      <mat-icon mat-card-avatar>sports_soccer</mat-icon>
       <mat-card-title>Centres d'intérêts</mat-card-title>
     </mat-card-header>
-    <mat-card-content fxLayout="row wrap" fxLayoutGap="10px">
-      <div *ngFor="let centreInteret of personne?.centresInterets; let i = index" fxLayout="row">
+    <mat-card-content class="">
+      <div *ngFor="let centreInteret of personne?.centresInterets; let i = index" class="">
           <span>
             {{i === 0 ? centreInteret : centreInteret.toLocaleLowerCase()}}
           </span>
