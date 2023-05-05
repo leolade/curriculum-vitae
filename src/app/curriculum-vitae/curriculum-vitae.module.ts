@@ -1,24 +1,26 @@
 import {NgModule} from '@angular/core';
-import {CommonModule, NgForOf} from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {CurriculumVitaeRoutes} from './curriculum-vitae.routes';
 import {CurriculumVitaeComponent} from './curriculum-vitae.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {CardComponent} from "../card/card.component";
 
 
 @NgModule({
-  declarations: [
-    CurriculumVitaeComponent
-  ],
-  imports: [
-    RouterModule.forChild(CurriculumVitaeRoutes.routes),
-    CommonModule,
-    MatCardModule,
-    MatIconModule,
-    MatButtonModule
-  ],
+    declarations: [
+        CurriculumVitaeComponent
+    ],
+    imports: [
+        RouterModule.forChild(CurriculumVitaeRoutes.routes),
+        CommonModule,
+        MatCardModule,
+        MatIconModule,
+        MatButtonModule,
+        CardComponent,
+    ],
 })
 export class CurriculumVitaeModule {
 }

@@ -1,132 +1,111 @@
 <div class="cv-container">
-  <mat-card class="infos-principales-card">
-    <mat-card-header>
-      <mat-icon mat-card-avatar>account_circle</mat-icon>
-      <mat-card-title>{{personne.prenom}} {{personne.nom}}</mat-card-title>
-      <mat-card-subtitle>{{personne.posteRecherche}}</mat-card-subtitle>
-      <button (click)="print()" class="print-button" color="primary" mat-icon-button>
-        <mat-icon>printer</mat-icon>
-      </button>
-    </mat-card-header>
-    <mat-card-content
-      class="">
-      <div class="">
-        <div class="">
-          <mat-icon>contact_phone</mat-icon>
-          <a href="tel:+3369-943-5272"> {{personne.numeroTelephone}}</a>
+    <app-card icon="account_circle" subtitle="{{personne.posteRecherche}}" [title]="personne.prenom + ' ' + personne.nom">
+            <div>
+                <div>
+                    <mat-icon>contact_phone</mat-icon>
+                    <a href="tel:+3369-943-5272"> {{personne.numeroTelephone}}</a>
+                </div>
+                <div>
+                    <mat-icon>contact_mail</mat-icon>
+                    <a href="mailto:lad.leo@hotmail.fr">{{personne.email}}</a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <mat-icon>house</mat-icon>
+                    <div>
+                        {{personne.adresse}}
+                    </div>
+                </div>
+                <div>
+                    <mat-icon>calendar_today</mat-icon>
+                    <span>{{personne.dateNaissance | date:'longDate':undefined:'fr-FR'}}</span>
+                </div>
+            </div>
+    </app-card>
+    <app-card icon="keyboard" title="Compétences">
+        <div *ngFor="let competence of personne?.competences">
+            <h2>{{competence.nom}}</h2>
+            <ul>
+                <li *ngFor="let sousCompetence of competence?.sousCompetences, let i = index">
+                    <span>{{sousCompetence.nom}}</span>
+                    <img *ngIf="sousCompetence.image" [height]="sousCompetence.image.height*2"
+                         [src]="'./assets/icons/' + sousCompetence.image.name"
+                         [width]="sousCompetence.image.width*2" alt="">
+                </li>
+            </ul>
         </div>
-        <div class="">
-          <mat-icon>contact_mail</mat-icon>
-          <a href="mailto:lad.leo@hotmail.fr">{{personne.email}}</a>
-        </div>
-      </div>
-      <div class="">
-        <div class="">
-          <mat-icon class="">house</mat-icon>
-          <div class="">
-            {{personne.adresse}}
-          </div>
-        </div>
-        <div class="">
-          <mat-icon class="">calendar_today</mat-icon>
-          <span class="">{{personne.dateNaissance | date:'longDate':undefined:'fr-FR'}}</span>
-        </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
-  <div class="">
-    <mat-card class="">
-      <mat-card-header>
-        <mat-icon mat-card-avatar>keyboard</mat-icon>
-        <mat-card-title>Compétences</mat-card-title>
-      </mat-card-header>
-      <mat-card-content class="">
-        <div *ngFor="let competence of personne?.competences" class="">
-          <h2>{{competence.nom}}</h2>
-          <ul class="">
-            <li *ngFor="let sousCompetence of competence?.sousCompetences, let i = index">
-              <span>{{sousCompetence.nom}}</span>
-              <img *ngIf="sousCompetence.image" [height]="sousCompetence.image.height*2"
-                   [src]="'./assets/icons/' + sousCompetence.image.name"
-                   [width]="sousCompetence.image.width*2" alt="">
-            </li>
-          </ul>
-        </div>
-      </mat-card-content>
-    </mat-card>
-    <mat-card class="experiences-card">
-      <mat-card-header>
+    </app-card>
+    <app-card icon="keyboard" title="Compétences">
         <mat-icon mat-card-avatar>work</mat-icon>
         <mat-card-title>Expériences</mat-card-title>
-      </mat-card-header>
-      <mat-card-content class="">
-        <div *ngFor="let experience of personne?.experiences" class="">
-          <div class="">
-            <p class="main-info">
-              {{experience.nomPoste}}
-            </p>
-          </div>
-          <div class="">
-            <div>
-              {{experience.nomEntreprise}}
-              <span class="italic">
+        <ng-container content>
+            <ng-container content>
+                <div *ngFor="let experience of personne?.experiences">
+                    <div>
+                        <p class="main-info">
+                            {{experience.nomPoste}}
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            {{experience.nomEntreprise}}
+                            <span class="italic">
               <ng-container *ngIf="experience?.dateDebut"> - {{experience?.dateDebut}}</ng-container>
               <ng-container *ngIf="experience?.dateFin"> à {{experience?.dateFin}}</ng-container>
               </span>
-            </div>
-            <div *ngIf="experience?.missionsHTML">
-              <p [innerHTML]="experience?.missionsHTML"></p>
-            </div>
-          </div>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <mat-card class="scolarite-card">
-    <mat-card-header>
-      <mat-icon mat-card-avatar>school</mat-icon>
-      <mat-card-title>Scolarité et formations</mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="">
-      <div *ngFor="let formation of personne?.formations" class="">
-        <div class="">
-          <p class="main-info">
-            {{formation.nomFormation}}
-          </p>
-        </div>
-        <div class="">
-          <div class="italic">
-            <ng-container *ngIf="formation?.dateDebut">{{formation?.dateDebut}}</ng-container>
-            <ng-container *ngIf="formation?.dateFin"> à {{formation?.dateFin}}</ng-container>
-            ,
-          </div>
-          <div>
-            <ng-container *ngIf="formation?.nomEtablissement"> {{formation.nomEtablissement}},</ng-container>
+                        </div>
+                        <div *ngIf="experience?.missionsHTML">
+                            <p [innerHTML]="experience?.missionsHTML"></p>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+    </app-card>
+    <app-card>
+        <mat-icon mat-card-avatar>school</mat-icon>
+        <mat-card-title>Scolarité et formations</mat-card-title>
+        <ng-container content>
+            <div *ngFor="let formation of personne?.formations">
+                <div>
+                    <p class="main-info">
+                        {{formation.nomFormation}}
+                    </p>
+                </div>
+                <div>
+                    <div class="italic">
+                        <ng-container *ngIf="formation?.dateDebut">{{formation?.dateDebut}}</ng-container>
+                        <ng-container *ngIf="formation?.dateFin"> à {{formation?.dateFin}}</ng-container>
+                        ,
+                    </div>
+                    <div>
+                        <ng-container *ngIf="formation?.nomEtablissement"> {{formation.nomEtablissement}},
+                        </ng-container>
 
-          </div>
-          <div>
-            <ng-container *ngIf="formation?.villeEtablissement">{{formation?.villeEtablissement}}</ng-container>
-          </div>
-        </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-icon mat-card-avatar>sports_soccer</mat-icon>
-      <mat-card-title>Centres d'intérêts</mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="">
-      <div *ngFor="let centreInteret of personne?.centresInterets; let i = index" class="">
+                    </div>
+                    <div>
+                        <ng-container
+                                *ngIf="formation?.villeEtablissement">{{formation?.villeEtablissement}}</ng-container>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </app-card>
+    <app-card>
+        <mat-icon mat-card-avatar>sports_soccer</mat-icon>
+        <mat-card-title>Centres d'intérêts</mat-card-title>
+        <ng-container content>
+            <div *ngFor="let centreInteret of personne?.centresInterets; let i = index">
           <span>
             {{i === 0 ? centreInteret : centreInteret.toLocaleLowerCase()}}
           </span>
-        <span *ngIf="i !== personne?.centresInterets.length - 1">
+                <span *ngIf="i !== personne?.centresInterets.length - 1">
             ,
           </span>
-      </div>
-    </mat-card-content>
-  </mat-card>
+            </div>
+        </ng-container>
+    </app-card>
 </div>
 
 
