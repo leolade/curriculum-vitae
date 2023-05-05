@@ -1,0 +1,12 @@
+:host {
+  h3 {
+    @apply font-bold mb-0;
+  }
+  h4 {
+    @apply font-medium;
+
+    .date {
+      @apply font-normal italic;
+    }
+  }
+}

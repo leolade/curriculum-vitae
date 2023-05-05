@@ -16,7 +16,7 @@ import {MatIconModule} from "@angular/material/icon";
 })
 export class CardComponent {
 
-    @Input({required: true}) title: string;
+    @Input({required: true}) cardTitle: string;
     @Input() subtitle?: string;
     @Input() icon?: string;
 

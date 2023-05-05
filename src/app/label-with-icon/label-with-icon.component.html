@@ -1,0 +1,11 @@
+<ng-container *ngIf="iconPosition === 'before'">
+  <ng-container *ngTemplateOutlet="iconTemplate"></ng-container>
+</ng-container>
+<ng-content></ng-content>
+<ng-container *ngIf="iconPosition === 'after'">
+  <ng-container *ngTemplateOutlet="iconTemplate"></ng-container>
+</ng-container>
+<ng-template #iconTemplate>
+  <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+  <ng-content select="img"></ng-content>
+</ng-template>

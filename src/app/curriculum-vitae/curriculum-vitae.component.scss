@@ -1,91 +1,73 @@
-//:host {
-//
-//  display: flex;
-//  font-size: 16px;
-//  width: 100%;
-//  flex-direction: column;
-//  place-content: center;
-//  align-items: center;
-//
-//  @media print, screen and (max-width: 959px) {
-//    .print-button {
-//      display: none;
-//    }
-//  }
-//
-//
-//
-//  i {
-//    color: rgba(0, 0, 0, 0.87);
-//  }
-//
-//  p.main-info, h2 {
-//    color: #21465f;
-//  }
-//
-//  .cv-container {
-//
-//    display: flex;
-//    flex-direction: column;
-//    gap: 20px;
-//    width: calc(100% - 30px);
-//
-//    margin: 15px;
-//
-//    mat-card {
-//
-//      &.infos-principales-card {
-//        ::ng-deep {
-//          mat-card-header {
-//            .mat-card-header-text {
-//              display: none;
-//            }
-//          }
-//        }
-//      }
-//
-//      mat-card-header {
-//        border-bottom: 1px solid #dedede;
-//        margin-bottom: 19px;
-//      }
-//
-//      h2 {
-//        font-size: 18px;
-//        margin-bottom: 5px;
-//        font-weight: 500;
-//      }
-//
-//      i {
-//        &.mat-card-avatar {
-//          height: inherit;
-//          width: inherit;
-//          font-size: 20px;
-//
-//          &.large {
-//            font-size: 40px;
-//          }
-//        }
-//      }
-//
-//      .mat-card-content {
-//        font-size: 16px;
-//      }
-//
-//      &.scolarite-card, &.experiences-card {
-//        @media print {
-//          margin-top: 10px;
-//        }
-//
-//        p.main-info {
-//          font-size: 18px;
-//          font-weight: 500;
-//        }
-//      }
-//
-//      li > img {
-//        margin-left: 5px;
-//      }
-//    }
-//  }
-//
-//}
+:host {
+
+  @apply flex flex-wrap gap-8 p-2;
+
+  #skill-card {
+    li {
+      @apply list-disc ml-8
+    }
+  }
+
+  #main-infos-card {
+    ::ng-deep {
+      mat-card-content {
+        @apply flex flex-wrap gap-x-8;
+
+        app-label-with-icon {
+          @apply min-w-[150px];
+        }
+      }
+    }
+  }
+
+  #main-infos-card, #point-of-interest-card {
+    @apply basis-full;
+  }
+
+  #works-card, #skill-card, #school-card {
+    ::ng-deep {
+      mat-card-content {
+        @apply flex flex-col gap-6;
+      }
+    }
+  }
+
+  #school-card {
+    @apply md:order-3 min-[1985px]:md:order-4;
+  }
+
+  #works-card {
+    @apply md:order-4 min-[1985px]:md:order-3;
+  }
+
+  #point-of-interest-card {
+    .comma {
+      @apply -ml-1
+    }
+  }
+
+  @media print {
+   app-card {
+     &#skill-card, &#works-card {
+       page-break-after: always;
+     }
+   }
+    .mat-mdc-mini-fab {
+      @apply hidden;
+    }
+  }
+
+  app-card {
+    @apply break-before-all;
+    @apply grow;
+    ::ng-deep {
+      mat-card {
+        @apply h-full;
+        mat-card-header {
+          @apply mb-2
+        }
+      }
+    }
+  }
+
+}

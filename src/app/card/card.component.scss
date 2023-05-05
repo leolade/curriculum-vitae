@@ -5,5 +5,16 @@
     mat-card-title {
       color: #418cbe;
     }
+
+    mat-card-header {
+      ::ng-deep {
+        .mat-mdc-card-header-text {
+          @apply grow;
+        }
+      }
+      .mat-icon {
+        @apply flex justify-center items-center;
+      }
+    }
   }
 }

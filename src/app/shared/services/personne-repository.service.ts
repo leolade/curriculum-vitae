@@ -11,7 +11,7 @@ export class PersonneRepositoryService {
     'Ladevie',
     'Léo',
     new Date('1995-03-08'),
-    '14 rue du docteur Horand, 69009 Lyon 9',
+    '23 Rue des vignerons, 69220 Belleville en Beaujolais',
     '06.99.43.52.72',
     'lad.leo@hotmail.fr',
     'Développeur',
@@ -24,7 +24,7 @@ export class PersonneRepositoryService {
           `Gestion d'une équipe Scrum de 6 développeurs.`,
           `Formations et documentations de bonnes pratiques.`,
         ],
-        'Juin 2021',
+        'Aout 2022',
         `aujourd'hui`
       ),
       new Experience(
@@ -35,7 +35,7 @@ export class PersonneRepositoryService {
           `J'ai également développé certaines fonctionnalités améliorant l'existant du produit.`,
         ],
         'Juin 2021',
-        `aujourd'hui`
+        `Aout 2022`
       ),
       new Experience(
         'Fiducial Informatique',
@@ -128,7 +128,7 @@ export class PersonneRepositoryService {
         'septembre 2015',
       ),
     ],
-    ['Football', 'Nouvelles technologies', 'Gastronomie', 'Accordéon']
+    ['Football', 'Nouvelles technologies', 'Gastronomie', 'Musique']
   );
 
   constructor() {
