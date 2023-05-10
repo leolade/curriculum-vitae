@@ -78,7 +78,6 @@ export class PersonneRepositoryService {
         [
           new Competence('Angular', null, new ImageInfo('ic-angular.svg', 9, 9)),
           new Competence('Angular Material', null, new ImageInfo('ic-angular-material.svg', 9, 9)),
-          new Competence('Angular JS', null, new ImageInfo('ic-angular-js.png', 9, 9)),
           new Competence('Typescript', null, new ImageInfo('ic-typescript.png', 9, 9)),
           new Competence('Javascript', null, new ImageInfo('ic-javascript.png', 9, 9)),
           new Competence('HTML5', null, new ImageInfo('ic-html5.png', 9, 9)),
@@ -86,7 +85,7 @@ export class PersonneRepositoryService {
         ]
       ),
       new CategorieCompetence(
-        'Environnements et méthodes',
+        'Outils et méthodes',
         null,
         null,
         [
@@ -94,7 +93,6 @@ export class PersonneRepositoryService {
           new Competence('Git / Github', null, new ImageInfo('ic-git.png', 9, 9)),
           new Competence('Intellij IDEA', null, new ImageInfo('ic-intellij.png', 9, 9)),
           new Competence('Jenkins', null, new ImageInfo('ic-jenkins.png', 9, 6)),
-          new Competence('SVN', null, new ImageInfo('ic-svn.png', 9, 9))
         ]
       )
     ],
