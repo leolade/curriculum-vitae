@@ -1,6 +1,6 @@
 :host {
 
-  @apply flex flex-wrap gap-8 p-2;
+  @apply flex flex-wrap gap-8 p-2 print:gap-2 print:p-1;
 
   #skill-card {
     li {
@@ -32,12 +32,16 @@
     }
   }
 
+  #skill-card {
+    @apply print:order-3;
+  }
+
   #school-card {
-    @apply md:order-3 min-[1985px]:md:order-4;
+    @apply md:order-3 min-[1985px]:md:order-4 print:order-4;
   }
 
   #works-card {
-    @apply md:order-4 min-[1985px]:md:order-3;
+    @apply md:order-4 min-[1985px]:md:order-3 print:order-2;
   }
 
   #point-of-interest-card {
@@ -47,13 +51,17 @@
   }
 
   @media print {
-   app-card {
-     &#skill-card, &#works-card {
-       page-break-after: always;
-     }
-   }
+    #works-card {
+      page-break-after: always;
+    }
     .mat-mdc-mini-fab {
       @apply hidden;
+    }
+
+    #main-infos-card {
+      app-label-with-icon:last-of-type {
+        @apply hidden
+      }
     }
   }
 

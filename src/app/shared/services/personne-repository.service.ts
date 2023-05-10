@@ -14,7 +14,7 @@ export class PersonneRepositoryService {
     '23 Rue des vignerons, 69220 Belleville en Beaujolais',
     '06.99.43.52.72',
     'lad.leo@hotmail.fr',
-    'Développeur',
+    'Lead developer Angular / Développeur Java',
     [
       new Experience(
         'IKIGAÏ - En mission chez un éditeur de logiciel',
@@ -24,7 +24,7 @@ export class PersonneRepositoryService {
           `Gestion d'une équipe Scrum de 6 développeurs.`,
           `Formations et documentations de bonnes pratiques.`,
         ],
-        'Aout 2022',
+        'Août 2022',
         `aujourd'hui`
       ),
       new Experience(
@@ -35,7 +35,7 @@ export class PersonneRepositoryService {
           `J'ai également développé certaines fonctionnalités améliorant l'existant du produit.`,
         ],
         'Juin 2021',
-        `Aout 2022`
+        `Août 2022`
       ),
       new Experience(
         'Fiducial Informatique',
@@ -56,14 +56,6 @@ export class PersonneRepositoryService {
         ],
         'janvier 2017',
         'avril 2018'
-      ),
-      new Experience(
-        'Adrea mutuelle',
-        'Developpeur',
-        [`Stage consistant à interfacer les logiciels de gestions externes à l'écosystème local de la mutuelle via une API SOAP Java.`,
-        ],
-        'juin 2016',
-        'septembre 2016'
       ),
     ],
     [
